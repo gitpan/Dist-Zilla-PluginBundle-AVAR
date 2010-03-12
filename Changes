@@ -1,5 +1,10 @@
 Revision history for Dist-Zilla-PluginBundle-AVAR
 
+0.03 2010-03-12 18:42:57
+
+    - Another shot at making Git work, now with
+      Dist::Zilla::PluginBundle::Git
+
 0.02 2010-03-12 18:37:30
 
     - Also use Git::Commit in my configuration
