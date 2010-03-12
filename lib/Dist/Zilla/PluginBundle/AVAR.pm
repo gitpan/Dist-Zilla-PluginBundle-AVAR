@@ -1,5 +1,5 @@
 package Dist::Zilla::PluginBundle::AVAR;
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 # ABSTRACT: BeLike::AVAR when you build your dists
 
 use 5.10.0;
