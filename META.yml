@@ -1,5 +1,5 @@
 ---
-abstract: 'BeLike::AVAR when you build your dists'
+abstract: 'Use L<Dist::Zilla> like AVAR does'
 author:
   - 'Ævar Arnfjörð Bjarmason <avar@cpan.org>'
 build_requires: {}
@@ -16,16 +16,15 @@ no_index:
     - t
 requires:
   Dist::Zilla: 1.092990
-  Dist::Zilla::Plugin::AutoPrereq: 1.100130
-  Dist::Zilla::Plugin::PodWeaver: 3.092971
-  Dist::Zilla::Plugin::Repository: 0
-  Dist::Zilla::Plugin::TaskWeaver: 0.093330
+  Dist::Zilla::Plugin::AutoPrereq: 0
+  Dist::Zilla::Plugin::MetaNoIndex: 0
+  Dist::Zilla::Plugin::ReadmeFromPod: 0.06
+  Dist::Zilla::Plugin::VersionFromPrev: 0
   Dist::Zilla::PluginBundle::Filter: 0
   Dist::Zilla::PluginBundle::Git: 0
   Dist::Zilla::Role::PluginBundle: 0
   Moose: 0
   Moose::Autobox: 0
-  Pod::Elemental::Transformer::List: 0
   Test::More: 0
   perl: 5.10.0
 resources:
@@ -34,4 +33,4 @@ resources:
   homepage: http://search.cpan.org/dist/Dist-Zilla-PluginBundle-AVAR/
   license: http://dev.perl.org/licenses/
   repository: http://github.com/avar/dist-zilla-pluginbundle-avar
-version: 0.06
+version: 0.07
