@@ -1,5 +1,5 @@
 package Dist::Zilla::PluginBundle::AVAR;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 # ABSTRACT: BeLike::AVAR when you build your dists
 
 use 5.10.0;
@@ -67,6 +67,7 @@ sub bundle_config {
             }
         ],
         [ 'Git::Check' => {} ],
+        [ 'Git::Commit' => {} ],
         [
             'Git::Tag' => {
                 tag_format => '%v',

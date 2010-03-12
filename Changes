@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-PluginBundle-AVAR
 
+0.02 2010-03-12 18:37:30
+
+    - Also use Git::Commit in my configuration
+
 0.01 2010-03-12 18:35:44
 
     - Forked from The Dist::Zilla::PluginBundle::RJBS with settings
