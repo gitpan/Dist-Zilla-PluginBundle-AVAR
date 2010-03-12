@@ -1,5 +1,5 @@
 package Dist::Zilla::PluginBundle::AVAR;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 # ABSTRACT: BeLike::AVAR when you build your dists
 
 use 5.10.0;
@@ -40,6 +40,7 @@ sub bundle_config {
     my $prefix = 'Dist::Zilla::Plugin::';
     my @extra = map {[ "$section->{name}/$_->[0]" => "$prefix$_->[0]" => $_->[1] ]}
     (
+        [ VersionFromPrev => {} ],
         [ AutoPrereq  => {} ],
         [ MetaJSON     => { } ],
         [

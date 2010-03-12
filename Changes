@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-PluginBundle-AVAR
 
+0.06 2010-03-12 20:11:40
+
+    - Use my shiny new VersionFromPrev plugin to manage releases
+
 0.05 2010-03-12 18:45:40
 
     - Silly error in previous releases broke all Git stuff
