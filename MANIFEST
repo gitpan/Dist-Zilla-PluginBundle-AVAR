@@ -3,7 +3,6 @@ LICENSE
 MANIFEST
 META.json
 META.yml
-Makefile.PL
 README
 dist.ini
 lib/Dist/Zilla/PluginBundle/AVAR.pm

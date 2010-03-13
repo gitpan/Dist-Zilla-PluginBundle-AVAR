@@ -1,5 +1,5 @@
 package Dist::Zilla::PluginBundle::AVAR;
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 use 5.10.0;
 use Moose;
@@ -13,6 +13,7 @@ use Dist::Zilla::Plugin::VersionFromPrev;
 use Dist::Zilla::Plugin::AutoPrereq;
 use Dist::Zilla::Plugin::MetaNoIndex;
 use Dist::Zilla::Plugin::ReadmeFromPod;
+use Dist::Zilla::Plugin::OverridableMakeMaker;
 
 sub bundle_config {
     my ($self, $section) = @_;
@@ -21,6 +22,8 @@ sub bundle_config {
     my $dist        = $args->{dist} // die "You must supply a dist =, it's equivalent to what you supply as name =";
     my $ldist       = lc $dist;
     my $github_user = $args->{github_user} // 'avar';
+    my $no_a_pre    = $args->{no_AutoPrereq} // 0;
+    my $no_mm       = $args->{no_MakeMaker} // 0;
 
     my @plugins = Dist::Zilla::PluginBundle::Filter->bundle_config({
         name    => $section->{name} . '/@Classic',
@@ -31,6 +34,8 @@ sub bundle_config {
                 'PodVersion',
                 # This will inevitably whine about completely reasonable stuff
                 'PodTests',
+                # Use my MakeMaker
+                'MakeMaker',
             ],
         },
     });
@@ -39,7 +44,9 @@ sub bundle_config {
     my @extra = map {[ "$section->{name}/$_->[0]" => "$prefix$_->[0]" => $_->[1] ]}
     (
         [ VersionFromPrev => {} ],
-        [ AutoPrereq  => {} ],
+        ($no_a_pre
+         ? ()
+         : ([ AutoPrereq  => { } ])),
         [ MetaJSON     => { } ],
         [
             MetaNoIndex => {
@@ -65,6 +72,11 @@ sub bundle_config {
                 format => '%-2v %{yyyy-MM-dd HH:mm:ss}d',
             }
         ],
+
+        # My very own MakeMaker
+        ($no_mm
+         ? ()
+         : ([ OverridableMakeMaker  => { } ])),
     );
     push @plugins, @extra;
 

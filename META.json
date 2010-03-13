@@ -11,12 +11,12 @@
          "t"
       ]
    },
-   "generated_by" : "Dist::Zilla version 1.100660",
+   "generated_by" : "Dist::Zilla version 1.100711",
    "meta-spec" : {
       "version" : 1.4,
       "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html"
    },
-   "version" : "0.07",
+   "version" : "0.08",
    "name" : "Dist-Zilla-PluginBundle-AVAR",
    "author" : [
       "\u00c3\u0086var Arnfj\u00c3\u00b6r\u00c3\u00b0 Bjarmason <avar@cpan.org>"
@@ -25,13 +25,14 @@
    "build_requires" : {},
    "requires" : {
       "Dist::Zilla::Role::PluginBundle" : "0",
+      "Dist::Zilla::Plugin::OverridableMakeMaker" : "0",
       "Dist::Zilla::Plugin::AutoPrereq" : "0",
       "Moose::Autobox" : "0",
       "Test::More" : "0",
       "perl" : "5.10.0",
+      "Dist::Zilla::Plugin::ReadmeFromPod" : "0.06",
       "Dist::Zilla::PluginBundle::Filter" : "0",
       "Dist::Zilla::Plugin::VersionFromPrev" : "0",
-      "Dist::Zilla::Plugin::ReadmeFromPod" : "0.06",
       "Dist::Zilla" : "1.092990",
       "Dist::Zilla::Plugin::MetaNoIndex" : "0",
       "Dist::Zilla::PluginBundle::Git" : "0",

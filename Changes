@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-PluginBundle-AVAR
 
+0.08 2010-03-13 07:41:31
+
+    - Replace MakeMaker with OverridableMakeMaker
+
 0.07 2010-03-12 22:37:51
 
     - Correctly declare dependencies for this module
