@@ -1,5 +1,10 @@
 Revision history for Dist-Zilla-PluginBundle-AVAR
 
+0.09 2010-03-13 12:43:29
+
+    - Support a bugtracker option for setting github, rt or any other
+      trackers in META.*
+
 0.08 2010-03-13 07:41:31
 
     - Replace MakeMaker with OverridableMakeMaker

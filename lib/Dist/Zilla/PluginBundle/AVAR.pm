@@ -1,5 +1,5 @@
 package Dist::Zilla::PluginBundle::AVAR;
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 use 5.10.0;
 use Moose;
@@ -24,6 +24,14 @@ sub bundle_config {
     my $github_user = $args->{github_user} // 'avar';
     my $no_a_pre    = $args->{no_AutoPrereq} // 0;
     my $no_mm       = $args->{no_MakeMaker} // 0;
+    my $bugtracker  = $args->{bugtracker}  // 'github';
+    my $tracker;
+
+    given ($bugtracker) {
+        when ('github') { $tracker = "http://github.com/$github_user/$ldist/issues" }
+        when ('rt')     { $tracker = "https://rt.cpan.org/Dist/Display.html?Name=$dist" }
+        default         { $tracker = $bugtracker }
+    }
 
     my @plugins = Dist::Zilla::PluginBundle::Filter->bundle_config({
         name    => $section->{name} . '/@Classic',
@@ -59,7 +67,7 @@ sub bundle_config {
         [
             MetaResources => {
                 homepage => "http://search.cpan.org/dist/$dist/",
-                bugtracker => "http://github.com/$github_user/$ldist/issues",
+                bugtracker => $tracker,
                 repository => "http://github.com/$github_user/$ldist",
                 license => 'http://dev.perl.org/licenses/',
                 Ratings => "http://cpanratings.perl.org/d/$dist",
