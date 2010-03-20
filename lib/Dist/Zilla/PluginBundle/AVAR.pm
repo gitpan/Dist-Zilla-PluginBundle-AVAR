@@ -1,5 +1,5 @@
 package Dist::Zilla::PluginBundle::AVAR;
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 use 5.10.0;
 use Moose;
@@ -29,7 +29,7 @@ sub bundle_config {
 
     given ($bugtracker) {
         when ('github') { $tracker = "http://github.com/$github_user/$ldist/issues" }
-        when ('rt')     { $tracker = "https://rt.cpan.org/Dist/Display.html?Name=$dist" }
+        when ('rt')     { $tracker = "https://rt.cpan.org/Public/Dist/Display.html?Name=$dist" }
         default         { $tracker = $bugtracker }
     }
 

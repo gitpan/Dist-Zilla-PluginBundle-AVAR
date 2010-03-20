@@ -1,5 +1,10 @@
 Revision history for Dist-Zilla-PluginBundle-AVAR
 
+0.10 2010-03-20 19:12:07
+
+    - Use the public RT urls instead of the private ones that require
+      you to log in.
+
 0.09 2010-03-13 12:43:29
 
     - Support a bugtracker option for setting github, rt or any other
