@@ -28,6 +28,8 @@ DESCRIPTION
         directory = t
         directory = xt
         directory = utils
+        directory = example
+        directory = examples
     
         [ReadmeFromPod]
 
