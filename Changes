@@ -1,5 +1,12 @@
 Revision history for Dist-Zilla-PluginBundle-AVAR
 
+0.13 2010-03-27 21:08:19
+
+    - Use Dist::Zilla::Plugin::CompileTests
+
+    - Use MakeMaker by default in my dists. Hailo can do its own
+      thing.
+
 0.12 2010-03-27 18:09:41
 
     - Don't use Dist::Zilla::Plugin::OverridableMakeMaker by

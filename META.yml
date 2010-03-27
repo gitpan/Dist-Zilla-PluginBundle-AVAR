@@ -3,6 +3,8 @@ abstract: 'Use L<Dist::Zilla> like AVAR does'
 author:
   - 'Ævar Arnfjörð Bjarmason <avar@cpan.org>'
 build_requires:
+  File::Find: 0
+  File::Temp: 0
   Test::More: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.31
@@ -12,12 +14,11 @@ meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Dist-Zilla-PluginBundle-AVAR
-no_index:
-  directory:
-    - t
+no_index: {}
 requires:
   Dist::Zilla: 1.092990
   Dist::Zilla::Plugin::AutoPrereq: 0
+  Dist::Zilla::Plugin::CompileTests: 0
   Dist::Zilla::Plugin::MetaNoIndex: 0
   Dist::Zilla::Plugin::OverridableMakeMaker: 0
   Dist::Zilla::Plugin::ReadmeFromPod: 0.06
@@ -34,4 +35,4 @@ resources:
   homepage: http://search.cpan.org/dist/Dist-Zilla-PluginBundle-AVAR/
   license: http://dev.perl.org/licenses/
   repository: http://github.com/avar/dist-zilla-pluginbundle-avar
-version: 0.12
+version: 0.13

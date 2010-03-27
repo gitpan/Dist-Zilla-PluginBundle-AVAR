@@ -6,6 +6,6 @@ META.yml
 README
 dist.ini
 lib/Dist/Zilla/PluginBundle/AVAR.pm
-t/compile.t
+t/00-compile.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t

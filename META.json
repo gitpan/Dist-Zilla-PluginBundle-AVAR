@@ -4,6 +4,8 @@
       "\u00c3\u0086var Arnfj\u00c3\u00b6r\u00c3\u00b0 Bjarmason <avar@cpan.org>"
    ],
    "build_requires" : {
+      "File::Find" : "0",
+      "File::Temp" : "0",
       "Test::More" : "0"
    },
    "configure_requires" : {
@@ -16,14 +18,11 @@
       "version" : 1.4
    },
    "name" : "Dist-Zilla-PluginBundle-AVAR",
-   "no_index" : {
-      "directory" : [
-         "t"
-      ]
-   },
+   "no_index" : {},
    "requires" : {
       "Dist::Zilla" : "1.092990",
       "Dist::Zilla::Plugin::AutoPrereq" : "0",
+      "Dist::Zilla::Plugin::CompileTests" : "0",
       "Dist::Zilla::Plugin::MetaNoIndex" : "0",
       "Dist::Zilla::Plugin::OverridableMakeMaker" : "0",
       "Dist::Zilla::Plugin::ReadmeFromPod" : "0.06",
@@ -42,6 +41,6 @@
       "license" : "http://dev.perl.org/licenses/",
       "repository" : "http://github.com/avar/dist-zilla-pluginbundle-avar"
    },
-   "version" : "0.12"
+   "version" : "0.13"
 }
 

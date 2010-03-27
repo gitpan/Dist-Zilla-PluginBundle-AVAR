@@ -1,5 +1,5 @@
 package Dist::Zilla::PluginBundle::AVAR;
-$Dist::Zilla::PluginBundle::AVAR::VERSION = '0.12';
+$Dist::Zilla::PluginBundle::AVAR::VERSION = '0.13';
 
 use 5.10.0;
 use Moose;
@@ -14,6 +14,7 @@ use Dist::Zilla::Plugin::AutoPrereq;
 use Dist::Zilla::Plugin::MetaNoIndex;
 use Dist::Zilla::Plugin::ReadmeFromPod;
 use Dist::Zilla::Plugin::OverridableMakeMaker;
+use Dist::Zilla::Plugin::CompileTests;
 
 sub bundle_config {
     my ($self, $section) = @_;
@@ -23,7 +24,8 @@ sub bundle_config {
     my $ldist       = lc $dist;
     my $github_user = $args->{github_user} // 'avar';
     my $no_a_pre    = $args->{no_AutoPrereq} // 0;
-    my $no_mm       = $args->{no_MakeMaker} // 1;
+    my $use_mm      = $args->{use_MakeMaker} // 1;
+    my $use_ct      = $args->{use_CompileTests} // 1;
     my $bugtracker  = $args->{bugtracker}  // 'github';
     my $tracker;
 
@@ -81,10 +83,15 @@ sub bundle_config {
             }
         ],
 
-        # My very own MakeMaker
-        ($no_mm
+        # Maybe use MakeMaker, maybe not
+        ($use_mm
          ? ([ MakeMaker  => { } ])
-         : ([ OverridableMakeMaker  => { } ])),
+         : ()),
+
+        # Maybe CompileTests
+        ($use_ct
+         ? ([ CompileTests  => { } ])
+         : ()),
     );
     push @plugins, @extra;
 
