@@ -1,5 +1,5 @@
 package Dist::Zilla::PluginBundle::AVAR;
-our $VERSION = '0.11';
+$Dist::Zilla::PluginBundle::AVAR::VERSION = '0.12';
 
 use 5.10.0;
 use Moose;
@@ -23,7 +23,7 @@ sub bundle_config {
     my $ldist       = lc $dist;
     my $github_user = $args->{github_user} // 'avar';
     my $no_a_pre    = $args->{no_AutoPrereq} // 0;
-    my $no_mm       = $args->{no_MakeMaker} // 0;
+    my $no_mm       = $args->{no_MakeMaker} // 1;
     my $bugtracker  = $args->{bugtracker}  // 'github';
     my $tracker;
 
@@ -83,7 +83,7 @@ sub bundle_config {
 
         # My very own MakeMaker
         ($no_mm
-         ? ()
+         ? ([ MakeMaker  => { } ])
          : ([ OverridableMakeMaker  => { } ])),
     );
     push @plugins, @extra;

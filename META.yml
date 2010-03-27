@@ -2,10 +2,11 @@
 abstract: 'Use L<Dist::Zilla> like AVAR does'
 author:
   - 'Ævar Arnfjörð Bjarmason <avar@cpan.org>'
-build_requires: {}
+build_requires:
+  Test::More: 0
 configure_requires:
-  ExtUtils::MakeMaker: 6.11
-generated_by: 'Dist::Zilla version 1.100711'
+  ExtUtils::MakeMaker: 6.31
+generated_by: 'Dist::Zilla version 2.100860'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -26,7 +27,6 @@ requires:
   Dist::Zilla::Role::PluginBundle: 0
   Moose: 0
   Moose::Autobox: 0
-  Test::More: 0
   perl: 5.10.0
 resources:
   Ratings: http://cpanratings.perl.org/d/Dist-Zilla-PluginBundle-AVAR
@@ -34,4 +34,4 @@ resources:
   homepage: http://search.cpan.org/dist/Dist-Zilla-PluginBundle-AVAR/
   license: http://dev.perl.org/licenses/
   repository: http://github.com/avar/dist-zilla-pluginbundle-avar
-version: 0.11
+version: 0.12
