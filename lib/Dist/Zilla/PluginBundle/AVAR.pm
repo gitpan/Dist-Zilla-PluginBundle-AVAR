@@ -1,5 +1,5 @@
 package Dist::Zilla::PluginBundle::AVAR;
-$Dist::Zilla::PluginBundle::AVAR::VERSION = '0.13';
+$Dist::Zilla::PluginBundle::AVAR::VERSION = '0.14';
 
 use 5.10.0;
 use Moose;
@@ -13,7 +13,7 @@ use Dist::Zilla::Plugin::VersionFromPrev;
 use Dist::Zilla::Plugin::AutoPrereq;
 use Dist::Zilla::Plugin::MetaNoIndex;
 use Dist::Zilla::Plugin::ReadmeFromPod;
-use Dist::Zilla::Plugin::OverridableMakeMaker;
+use Dist::Zilla::Plugin::MakeMaker::Awesome;
 use Dist::Zilla::Plugin::CompileTests;
 
 sub bundle_config {
