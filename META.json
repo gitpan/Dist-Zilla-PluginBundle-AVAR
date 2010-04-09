@@ -11,7 +11,7 @@
    "configure_requires" : {
       "ExtUtils::MakeMaker" : "6.31"
    },
-   "generated_by" : "Dist::Zilla version 2.100880",
+   "generated_by" : "Dist::Zilla version 2.100960",
    "license" : "perl",
    "meta-spec" : {
       "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html",
@@ -19,9 +19,9 @@
    },
    "name" : "Dist-Zilla-PluginBundle-AVAR",
    "no_index" : {},
+   "recommends" : {},
    "requires" : {
       "Dist::Zilla" : "1.092990",
-      "Dist::Zilla::Plugin::AutoPrereq" : "0",
       "Dist::Zilla::Plugin::CompileTests" : "0",
       "Dist::Zilla::Plugin::MakeMaker::Awesome" : "0",
       "Dist::Zilla::Plugin::MetaNoIndex" : "0",
@@ -41,6 +41,6 @@
       "license" : "http://dev.perl.org/licenses/",
       "repository" : "http://github.com/avar/dist-zilla-pluginbundle-avar"
    },
-   "version" : "0.14"
+   "version" : "0.15"
 }
 

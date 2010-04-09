@@ -1,5 +1,7 @@
 package Dist::Zilla::PluginBundle::AVAR;
-$Dist::Zilla::PluginBundle::AVAR::VERSION = '0.14';
+BEGIN {
+  $Dist::Zilla::PluginBundle::AVAR::VERSION = '0.15';
+}
 
 use 5.10.0;
 use Moose;
@@ -10,7 +12,6 @@ with 'Dist::Zilla::Role::PluginBundle';
 use Dist::Zilla::PluginBundle::Filter;
 use Dist::Zilla::PluginBundle::Git;
 use Dist::Zilla::Plugin::VersionFromPrev;
-use Dist::Zilla::Plugin::AutoPrereq;
 use Dist::Zilla::Plugin::MetaNoIndex;
 use Dist::Zilla::Plugin::ReadmeFromPod;
 use Dist::Zilla::Plugin::MakeMaker::Awesome;
@@ -27,12 +28,19 @@ sub bundle_config {
     my $use_mm      = $args->{use_MakeMaker} // 1;
     my $use_ct      = $args->{use_CompileTests} // 1;
     my $bugtracker  = $args->{bugtracker}  // 'github';
+    my $homepage    = $args->{homepage};
     my $tracker;
+    my $page;
 
     given ($bugtracker) {
         when ('github') { $tracker = "http://github.com/$github_user/$ldist/issues" }
         when ('rt')     { $tracker = "https://rt.cpan.org/Public/Dist/Display.html?Name=$dist" }
         default         { $tracker = $bugtracker }
+    }
+
+    given ($homepage) {
+        when (not defined) { $page = "http://search.cpan.org/dist/$dist/" }
+        default            { $page = $homepage }
     }
 
     my @plugins = Dist::Zilla::PluginBundle::Filter->bundle_config({
@@ -43,7 +51,7 @@ sub bundle_config {
                 # Don't add a =head1 VERSION
                 'PodVersion',
                 # This will inevitably whine about completely reasonable stuff
-                'PodTests',
+                'PodCoverageTests',
                 # Use my MakeMaker
                 'MakeMaker',
             ],
@@ -68,7 +76,7 @@ sub bundle_config {
         [ ReadmeFromPod => {} ],
         [
             MetaResources => {
-                homepage => "http://search.cpan.org/dist/$dist/",
+                homepage => $page,
                 bugtracker => $tracker,
                 repository => "http://github.com/$github_user/$ldist",
                 license => 'http://dev.perl.org/licenses/',
@@ -127,7 +135,7 @@ It's equivalent to:
     [@Filter]
     bundle = @Classic
     remove = PodVersion
-    remove = PodTests
+    remove = PodCoverageTests
     
     [VersionFromPrev]
     [AutoPrereq]

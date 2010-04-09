@@ -16,7 +16,7 @@ DESCRIPTION
         [@Filter]
         bundle = @Classic
         remove = PodVersion
-        remove = PodTests
+        remove = PodCoverageTests
     
         [VersionFromPrev]
         [AutoPrereq]
