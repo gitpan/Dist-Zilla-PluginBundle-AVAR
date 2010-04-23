@@ -10,6 +10,15 @@ DESCRIPTION
         dist = MyDist
         ;; If you're not avar
         github_user = imposter
+        ;; Bugtracker github or rt
+        bugtracker = rt
+        ;; custom homepage/repository
+        homepage = http://example.com
+        repository = http://git.example.com/repo.git
+        ;; use various stuff or not
+        no_AutoPrereq = 1 ; evil for this module
+        use_MakeMaker = 0 ; If using e.g. MakeMaker::Awesome instead
+        use_ComplieTests = 0 ; I have my own compile tests here..
 
     It's equivalent to:
 

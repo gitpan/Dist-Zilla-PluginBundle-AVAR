@@ -25,7 +25,7 @@ my %WriteMakefileArgs = (
                                            },
                        'ABSTRACT' => 'Use L<Dist::Zilla> like AVAR does',
                        'EXE_FILES' => [],
-                       'VERSION' => '0.15',
+                       'VERSION' => '0.16',
                        'PREREQ_PM' => {
                                         'Dist::Zilla::Role::PluginBundle' => '0',
                                         'Dist::Zilla::Plugin::CompileTests' => '0',

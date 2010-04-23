@@ -8,7 +8,7 @@ build_requires:
   Test::More: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.31
-generated_by: 'Dist::Zilla version 2.100960'
+generated_by: 'Dist::Zilla version 2.101040'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -35,4 +35,4 @@ resources:
   homepage: http://search.cpan.org/dist/Dist-Zilla-PluginBundle-AVAR/
   license: http://dev.perl.org/licenses/
   repository: http://github.com/avar/dist-zilla-pluginbundle-avar
-version: 0.15
+version: 0.16
