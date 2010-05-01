@@ -1,6 +1,6 @@
 package Dist::Zilla::PluginBundle::AVAR;
 BEGIN {
-  $Dist::Zilla::PluginBundle::AVAR::VERSION = '0.16';
+  $Dist::Zilla::PluginBundle::AVAR::VERSION = '0.17';
 }
 
 use 5.10.0;
