@@ -9,38 +9,38 @@ use ExtUtils::MakeMaker 6.31;
 
 
 my %WriteMakefileArgs = (
-                       'test' => {
-                                   'TESTS' => 't/*.t'
-                                 },
-                       'NAME' => 'Dist::Zilla::PluginBundle::AVAR',
-                       'DISTNAME' => 'Dist-Zilla-PluginBundle-AVAR',
-                       'CONFIGURE_REQUIRES' => {
-                                                 'ExtUtils::MakeMaker' => '6.31'
-                                               },
-                       'AUTHOR' => 'Ævar Arnfjörð Bjarmason <avar@cpan.org>',
-                       'BUILD_REQUIRES' => {
-                                             'Test::More' => '0',
-                                             'File::Find' => '0',
-                                             'File::Temp' => '0'
-                                           },
-                       'ABSTRACT' => 'Use L<Dist::Zilla> like AVAR does',
-                       'EXE_FILES' => [],
-                       'VERSION' => '0.17',
-                       'PREREQ_PM' => {
-                                        'Dist::Zilla::Role::PluginBundle' => '0',
-                                        'Dist::Zilla::Plugin::CompileTests' => '0',
-                                        'Dist::Zilla::Plugin::MakeMaker::Awesome' => '0',
-                                        'Moose::Autobox' => '0',
-                                        'Dist::Zilla::PluginBundle::Filter' => '0',
-                                        'Dist::Zilla::Plugin::VersionFromPrev' => '0',
-                                        'Dist::Zilla::Plugin::ReadmeFromPod' => '0.06',
-                                        'Dist::Zilla' => '1.092990',
-                                        'Dist::Zilla::Plugin::MetaNoIndex' => '0',
-                                        'Dist::Zilla::PluginBundle::Git' => '0',
-                                        'Moose' => '0'
-                                      },
-                       'LICENSE' => 'perl'
-                     );
+  'ABSTRACT' => 'Use L<Dist::Zilla> like AVAR does',
+  'AUTHOR' => 'Ævar Arnfjörð Bjarmason <avar@cpan.org>',
+  'BUILD_REQUIRES' => {
+    'File::Find' => '0',
+    'File::Temp' => '0',
+    'Test::More' => '0'
+  },
+  'CONFIGURE_REQUIRES' => {
+    'ExtUtils::MakeMaker' => '6.31'
+  },
+  'DISTNAME' => 'Dist-Zilla-PluginBundle-AVAR',
+  'EXE_FILES' => [],
+  'LICENSE' => 'perl',
+  'NAME' => 'Dist::Zilla::PluginBundle::AVAR',
+  'PREREQ_PM' => {
+    'Dist::Zilla' => '1.092990',
+    'Dist::Zilla::Plugin::CompileTests' => '0',
+    'Dist::Zilla::Plugin::MakeMaker::Awesome' => '0',
+    'Dist::Zilla::Plugin::MetaNoIndex' => '0',
+    'Dist::Zilla::Plugin::ReadmeFromPod' => '0.06',
+    'Dist::Zilla::Plugin::VersionFromPrev' => '0',
+    'Dist::Zilla::PluginBundle::Filter' => '0',
+    'Dist::Zilla::PluginBundle::Git' => '0',
+    'Dist::Zilla::Role::PluginBundle' => '0',
+    'Moose' => '0',
+    'Moose::Autobox' => '0'
+  },
+  'VERSION' => '0.18',
+  'test' => {
+    'TESTS' => 't/*.t'
+  }
+);
 
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
