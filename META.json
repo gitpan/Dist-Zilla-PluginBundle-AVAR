@@ -4,7 +4,7 @@
       "\u00c3\u0086var Arnfj\u00c3\u00b6r\u00c3\u00b0 Bjarmason <avar@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 3.101450",
+   "generated_by" : "Dist::Zilla version 3.101461",
    "license" : "perl_5",
    "meta-spec" : {
       "url" : "http://github.com/dagolden/cpan-meta/",
@@ -21,6 +21,7 @@
       "runtime" : {
          "requires" : {
             "Dist::Zilla" : "1.092990",
+            "Dist::Zilla::Plugin::Authority" : "0",
             "Dist::Zilla::Plugin::CompileTests" : "0",
             "Dist::Zilla::Plugin::MakeMaker::Awesome" : "0",
             "Dist::Zilla::Plugin::MetaNoIndex" : "0",
@@ -45,14 +46,18 @@
    "resources" : {
       "Ratings" : "http://cpanratings.perl.org/d/Dist-Zilla-PluginBundle-AVAR",
       "bugtracker" : {
-         "web" : "https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-PluginBundle-AVAR"
+         "mailto" : "bug-Dist-Zilla-PluginBundle-AVAR@rt.cpan.org",
+         "url" : "https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-PluginBundle-AVAR"
       },
       "homepage" : "http://search.cpan.org/dist/Dist-Zilla-PluginBundle-AVAR/",
       "license" : "http://dev.perl.org/licenses/",
       "repository" : {
-         "url" : "http://github.com/avar/dist-zilla-pluginbundle-avar"
+         "type" : "git",
+         "url" : "git://github.com/avar/dist-zilla-pluginbundle-avar.git",
+         "web" : "http://github.com/avar/dist-zilla-pluginbundle-avar"
       }
    },
-   "version" : "0.18"
+   "version" : "0.19",
+   "x_authority" : "cpan:AVAR"
 }
 

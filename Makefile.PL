@@ -25,6 +25,7 @@ my %WriteMakefileArgs = (
   'NAME' => 'Dist::Zilla::PluginBundle::AVAR',
   'PREREQ_PM' => {
     'Dist::Zilla' => '1.092990',
+    'Dist::Zilla::Plugin::Authority' => '0',
     'Dist::Zilla::Plugin::CompileTests' => '0',
     'Dist::Zilla::Plugin::MakeMaker::Awesome' => '0',
     'Dist::Zilla::Plugin::MetaNoIndex' => '0',
@@ -36,7 +37,7 @@ my %WriteMakefileArgs = (
     'Moose' => '0',
     'Moose::Autobox' => '0'
   },
-  'VERSION' => '0.18',
+  'VERSION' => '0.19',
   'test' => {
     'TESTS' => 't/*.t'
   }
