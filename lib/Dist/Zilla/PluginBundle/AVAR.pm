@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::AVAR::AUTHORITY = 'cpan:AVAR';
 }
 BEGIN {
-  $Dist::Zilla::PluginBundle::AVAR::VERSION = '0.19';
+  $Dist::Zilla::PluginBundle::AVAR::VERSION = '0.20';
 }
 
 use 5.10.0;
@@ -32,9 +32,9 @@ sub bundle_config {
     my $use_mm      = $args->{use_MakeMaker} // 1;
     my $use_ct      = $args->{use_CompileTests} // 1;
     my $bugtracker  = $args->{bugtracker}  // 'rt';
-    die "AVAR: Don't use GitHub as a tracker" if $bugtracker eq 'github';
+    warn "AVAR: Don't use GitHub as a tracker" if $bugtracker eq 'github';
     my $homepage    = $args->{homepage};
-    die "AVAR: Upgrade to new format" if $args->{repository};
+    warn "AVAR: Upgrade to new format" if $args->{repository};
     my $repository_url  = $args->{repository_url};
     my $repository_web  = $args->{repository_web};
     my ($tracker, $tracker_mailto);
@@ -100,13 +100,12 @@ sub bundle_config {
         [
             MetaResources => {
                 homepage => $page,
-                'bugtracker.url' => $tracker,
+                'bugtracker.web' => $tracker,
                 'bugtracker.mailto' => $tracker_mailto,
                 'repository.type' => 'git',
                 'repository.url' => $repo_url,
                 'repository.web' => $repo_web,
                 license => 'http://dev.perl.org/licenses/',
-                Ratings => "http://cpanratings.perl.org/d/$dist",
             }
 
         ],
@@ -202,7 +201,6 @@ It's equivalent to:
     repository.url = git://github.com/$github_user/$lc_dist.git
     repository.type = git
     license    = http://dev.perl.org/licenses/
-    Ratings    = http://cpanratings.perl.org/d/$dist
 
     [Authority]
     authority   = cpan:AVAR

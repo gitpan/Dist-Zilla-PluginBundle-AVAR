@@ -4,11 +4,13 @@
       "\u00c3\u0086var Arnfj\u00c3\u00b6r\u00c3\u00b0 Bjarmason <avar@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 3.101461",
-   "license" : "perl_5",
+   "generated_by" : "Dist::Zilla version 4.101612, CPAN::Meta::Converter version 2.101670",
+   "license" : [
+      "perl_5"
+   ],
    "meta-spec" : {
-      "url" : "http://github.com/dagolden/cpan-meta/",
-      "version" : 2
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
    },
    "name" : "Dist-Zilla-PluginBundle-AVAR",
    "no_index" : {},
@@ -21,43 +23,45 @@
       "runtime" : {
          "requires" : {
             "Dist::Zilla" : "1.092990",
-            "Dist::Zilla::Plugin::Authority" : "0",
-            "Dist::Zilla::Plugin::CompileTests" : "0",
-            "Dist::Zilla::Plugin::MakeMaker::Awesome" : "0",
-            "Dist::Zilla::Plugin::MetaNoIndex" : "0",
+            "Dist::Zilla::Plugin::Authority" : 0,
+            "Dist::Zilla::Plugin::CompileTests" : 0,
+            "Dist::Zilla::Plugin::MakeMaker::Awesome" : 0,
+            "Dist::Zilla::Plugin::MetaNoIndex" : 0,
             "Dist::Zilla::Plugin::ReadmeFromPod" : "0.06",
-            "Dist::Zilla::Plugin::VersionFromPrev" : "0",
-            "Dist::Zilla::PluginBundle::Filter" : "0",
-            "Dist::Zilla::PluginBundle::Git" : "0",
-            "Dist::Zilla::Role::PluginBundle" : "0",
-            "Moose" : "0",
-            "Moose::Autobox" : "0",
-            "perl" : "5.10.0"
+            "Dist::Zilla::Plugin::VersionFromPrev" : 0,
+            "Dist::Zilla::PluginBundle::Filter" : 0,
+            "Dist::Zilla::PluginBundle::Git" : 0,
+            "Dist::Zilla::Role::PluginBundle" : 0,
+            "Moose" : 0,
+            "Moose::Autobox" : 0,
+            "perl" : "v5.10.0"
          }
       },
       "test" : {
          "requires" : {
-            "File::Find" : "0",
-            "File::Temp" : "0",
-            "Test::More" : "0"
+            "File::Find" : 0,
+            "File::Temp" : 0,
+            "Test::More" : 0
          }
       }
    },
+   "release_status" : "stable",
    "resources" : {
-      "Ratings" : "http://cpanratings.perl.org/d/Dist-Zilla-PluginBundle-AVAR",
       "bugtracker" : {
          "mailto" : "bug-Dist-Zilla-PluginBundle-AVAR@rt.cpan.org",
-         "url" : "https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-PluginBundle-AVAR"
+         "web" : "https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-PluginBundle-AVAR"
       },
       "homepage" : "http://search.cpan.org/dist/Dist-Zilla-PluginBundle-AVAR/",
-      "license" : "http://dev.perl.org/licenses/",
+      "license" : [
+         "http://dev.perl.org/licenses/"
+      ],
       "repository" : {
          "type" : "git",
          "url" : "git://github.com/avar/dist-zilla-pluginbundle-avar.git",
          "web" : "http://github.com/avar/dist-zilla-pluginbundle-avar"
       }
    },
-   "version" : "0.19",
+   "version" : "0.20",
    "x_authority" : "cpan:AVAR"
 }
 

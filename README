@@ -51,7 +51,6 @@ DESCRIPTION
         repository.url = git://github.com/$github_user/$lc_dist.git
         repository.type = git
         license    = http://dev.perl.org/licenses/
-        Ratings    = http://cpanratings.perl.org/d/$dist
 
         [Authority]
         authority   = cpan:AVAR
