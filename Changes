@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-PluginBundle-AVAR
 
+0.21 2010-06-21 17:10:32
+
+    - Fix POD typo pointed out by Hinrik
+
 0.20 2010-06-18 13:01:23
 
     - Make the AVAR: die() a warn(). dngor's snerp-vortex is still
