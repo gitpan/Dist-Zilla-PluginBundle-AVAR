@@ -19,6 +19,8 @@ DESCRIPTION
         no_AutoPrereq = 1 ; evil for this module
         use_MakeMaker = 0 ; If using e.g. MakeMaker::Awesome instead
         use_CompileTests = 0 ; I have my own compile tests here..
+        ;; cpan:AVAR is the default AUTHORITY
+        authority = cpan:AVAR
 
     It's equivalent to:
 
