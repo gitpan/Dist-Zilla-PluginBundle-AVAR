@@ -35,5 +35,5 @@ resources:
   homepage: http://search.cpan.org/dist/Dist-Zilla-PluginBundle-AVAR/
   license: http://dev.perl.org/licenses/
   repository: git://github.com/avar/dist-zilla-pluginbundle-avar.git
-version: 0.22
+version: 0.23
 x_authority: cpan:AVAR

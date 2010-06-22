@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::AVAR::AUTHORITY = 'cpan:AVAR';
 }
 BEGIN {
-  $Dist::Zilla::PluginBundle::AVAR::VERSION = '0.22';
+  $Dist::Zilla::PluginBundle::AVAR::VERSION = '0.23';
 }
 
 use 5.10.0;
@@ -38,6 +38,8 @@ sub bundle_config {
     warn "AVAR: Upgrade to new format" if $args->{repository};
     my $repository_url  = $args->{repository_url};
     my $repository_web  = $args->{repository_web};
+    my $nextrelease_format = $args->{nextrelease_format} // '%-2v %{yyyy-MM-dd HH:mm:ss}d',
+    my $tag_message = $args->{git_tag_message};
     my ($tracker, $tracker_mailto);
     my $page;
     my ($repo_url, $repo_web);
@@ -119,7 +121,7 @@ sub bundle_config {
         # Bump the Changlog
         [
             NextRelease => {
-                format => '%-2v %{yyyy-MM-dd HH:mm:ss}d',
+                format => $nextrelease_format,
             }
         ],
 
@@ -139,6 +141,9 @@ sub bundle_config {
         name    => "$section->{name}/\@Git",
         payload => {
             tag_format => '%v',
+            ($tag_message
+             ? (tag_message => $tag_message)
+             : ()),
         },
     });
 
