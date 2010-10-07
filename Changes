@@ -1,5 +1,10 @@
 Revision history for Dist-Zilla-PluginBundle-AVAR
 
+0.24 2010-10-07 16:07:09
+
+    - Use BumpVersionFromGit instead of VersionFromPrev. It uses
+      Version::Next, which supports GNU-style (e.g. 1.2.2) versions.
+
 0.23 2010-06-22 18:10:37
 
     - Make [NextRelease] format=* and [Git] tag_message configurable
