@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::AVAR::AUTHORITY = 'cpan:AVAR';
 }
 BEGIN {
-  $Dist::Zilla::PluginBundle::AVAR::VERSION = '0.24';
+  $Dist::Zilla::PluginBundle::AVAR::VERSION = '0.25';
 }
 
 use 5.10.0;
@@ -89,6 +89,7 @@ sub bundle_config {
     (
         [
             BumpVersionFromGit => {
+                first_version => '0.01',
                 version_regexp => '^(\d.*)$',
             }
         ],
