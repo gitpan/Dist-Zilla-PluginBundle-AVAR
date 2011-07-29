@@ -30,7 +30,7 @@ DESCRIPTION
         remove = PodCoverageTests
     
         [VersionFromPrev]
-        [AutoPrereq]
+        [AutoPrereqs]
         [MetaJSON]
 
         [MetaNoIndex]
@@ -63,6 +63,8 @@ DESCRIPTION
     
         [@Git]
         tag_format = %v
+        version_regexp = '^(\d.*)$'
+        first_version = '0.01'
 
 AUTHOR
     Ævar Arnfjörð Bjarmason <avar@cpan.org>

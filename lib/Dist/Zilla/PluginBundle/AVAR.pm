@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::AVAR::AUTHORITY = 'cpan:AVAR';
 }
 BEGIN {
-  $Dist::Zilla::PluginBundle::AVAR::VERSION = '0.25';
+  $Dist::Zilla::PluginBundle::AVAR::VERSION = '0.26';
 }
 
 use 5.10.0;
@@ -13,8 +13,7 @@ use Moose::Autobox;
 with 'Dist::Zilla::Role::PluginBundle';
 
 use Dist::Zilla::PluginBundle::Filter;
-use Dist::Zilla::PluginBundle::Git;
-use Dist::Zilla::Plugin::BumpVersionFromGit;
+use Dist::Zilla::PluginBundle::Git 1.102810;
 use Dist::Zilla::Plugin::MetaNoIndex;
 use Dist::Zilla::Plugin::ReadmeFromPod;
 use Dist::Zilla::Plugin::MakeMaker::Awesome;
@@ -40,6 +39,7 @@ sub bundle_config {
     my $repository_web  = $args->{repository_web};
     my $nextrelease_format = $args->{nextrelease_format} // '%-2v %{yyyy-MM-dd HH:mm:ss}d',
     my $tag_message = $args->{git_tag_message};
+    my $version_regexp = $args->{git_version_regexp};
     my ($tracker, $tracker_mailto);
     my $page;
     my ($repo_url, $repo_web);
@@ -65,7 +65,7 @@ sub bundle_config {
     }
 
     given ($homepage) {
-        when (not defined) { $page = "http://search.cpan.org/dist/$dist/" }
+        when (not defined) { $page = "http://metacpan.org/release/$dist" }
         default            { $page = $homepage }
     }
 
@@ -88,14 +88,16 @@ sub bundle_config {
     my @extra = map {[ "$section->{name}/$_->[0]" => "$prefix$_->[0]" => $_->[1] ]}
     (
         [
-            BumpVersionFromGit => {
+            'Git::NextVersion' => {
                 first_version => '0.01',
-                version_regexp => '^(\d.*)$',
+                ($version_regexp
+                ? (version_regexp => $version_regexp)
+                : (version_regexp => '^(\d.*)$')),
             }
         ],
         ($no_a_pre
          ? ()
-         : ([ AutoPrereq  => { } ])),
+         : ([ AutoPrereqs  => { } ])),
         [ MetaJSON     => { } ],
         [
             MetaNoIndex => {
@@ -191,7 +193,7 @@ It's equivalent to:
     remove = PodCoverageTests
     
     [VersionFromPrev]
-    [AutoPrereq]
+    [AutoPrereqs]
     [MetaJSON]
 
     [MetaNoIndex]
@@ -224,6 +226,8 @@ It's equivalent to:
     
     [@Git]
     tag_format = %v
+    version_regexp = '^(\d.*)$'
+    first_version = '0.01'
 
 =head1 AUTHOR
 

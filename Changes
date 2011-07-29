@@ -1,9 +1,13 @@
 Revision history for Dist-Zilla-PluginBundle-AVAR
 
-0.25 2011-03-29 09:10:49
+0.26 2011-07-29 01:54:18
 
-    - Set the first version to 0.01 with BumpVersionFromGit. Dan
-      changed this, which broke my new modules.
+    - Update dist to match Prereq -> Prereqs change
+
+    - Use Plugin::Git::NextVersion from PluginBundle::Git instead of
+      Plugin::BumpVersionFromGit, and set first_version to '0.01'
+
+    - Change the default homepage to use metacpan.org
 
 0.24 2010-10-07 16:07:09
 

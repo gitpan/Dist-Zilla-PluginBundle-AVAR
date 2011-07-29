@@ -4,7 +4,7 @@ use warnings;
 
 BEGIN { require 5.10.0; }
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
@@ -17,7 +17,7 @@ my %WriteMakefileArgs = (
     'Test::More' => '0'
   },
   'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+    'ExtUtils::MakeMaker' => '6.30'
   },
   'DISTNAME' => 'Dist-Zilla-PluginBundle-AVAR',
   'EXE_FILES' => [],
@@ -26,18 +26,17 @@ my %WriteMakefileArgs = (
   'PREREQ_PM' => {
     'Dist::Zilla' => '1.092990',
     'Dist::Zilla::Plugin::Authority' => '0',
-    'Dist::Zilla::Plugin::BumpVersionFromGit' => '0',
     'Dist::Zilla::Plugin::CompileTests' => '0',
     'Dist::Zilla::Plugin::MakeMaker::Awesome' => '0',
     'Dist::Zilla::Plugin::MetaNoIndex' => '0',
     'Dist::Zilla::Plugin::ReadmeFromPod' => '0.06',
     'Dist::Zilla::PluginBundle::Filter' => '0',
-    'Dist::Zilla::PluginBundle::Git' => '0',
+    'Dist::Zilla::PluginBundle::Git' => '1.102810',
     'Dist::Zilla::Role::PluginBundle' => '0',
     'Moose' => '0',
     'Moose::Autobox' => '0'
   },
-  'VERSION' => '0.25',
+  'VERSION' => '0.26',
   'test' => {
     'TESTS' => 't/*.t'
   }
