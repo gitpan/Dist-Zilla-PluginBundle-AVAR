@@ -5,21 +5,20 @@ DESCRIPTION
     This is the plugin bundle that AVAR uses. Use it as:
 
         [@AVAR]
-        ;; same as `name' earlier in the dist.ini, repeated due to
-        ;; limitations of the Dist::Zilla plugin interface
+        ;; same as `name' earlier in the dist.ini (optional, detected from $dzil->name)
         dist = MyDist
-        ;; If you're not avar
+        ;; If you're not avar (will be read from "git config github.user" or $ENV{GITHUB_USER} by default)
         github_user = imposter
-        ;; Bugtracker github or rt
+        ;; Bugtracker github or rt, default is rt
         bugtracker = rt
-        ;; custom homepage/repository
+        ;; custom homepage/repository, defaults to metacpan page and github repository lc($dist->name)
         homepage = http://example.com
         repository = http://git.example.com/repo.git
         ;; use various stuff or not
         no_AutoPrereq = 1 ; evil for this module
         use_MakeMaker = 0 ; If using e.g. MakeMaker::Awesome instead
-        use_CompileTests = 0 ; I have my own compile tests here..
-        ;; cpan:AVAR is the default AUTHORITY
+        use_TestCompile = 0 ; I have my own compile tests here..
+        ;; cpan:YOUR_CPAN_ID is the default authority, read from "dzil setup" entry for PAUSE
         authority = cpan:AVAR
 
     It's equivalent to:
@@ -65,6 +64,9 @@ DESCRIPTION
         tag_format = %v
         version_regexp = '^(\d.*)$'
         first_version = '0.01'
+
+        [InstallRelease]
+        install_command = cpanm .
 
 AUTHOR
     Ævar Arnfjörð Bjarmason <avar@cpan.org>
