@@ -20,6 +20,9 @@ DESCRIPTION
         use_TestCompile = 0 ; I have my own compile tests here..
         ;; cpan:YOUR_CPAN_ID is the default authority, read from "dzil setup" entry for PAUSE
         authority = cpan:AVAR
+        ;; if you want to install your dist after release (set $ENV{PERL_CPANM_OPTS} if you need --sudo or --mirror etc.)
+        ;; default is OFF
+        install_command = cpanm .
 
     It's equivalent to:
 
@@ -67,6 +70,17 @@ DESCRIPTION
 
         [InstallRelease]
         install_command = cpanm .
+
+    If you'd like a minting profile (to create new modules with all the
+    boilerplate) for this PluginBundle, check out:
+    Dist::Zilla::MintingProfile::Author::Caelum.
+
+SEE ALSO
+    *   Dist::Zilla
+
+    *   Dist::Zilla::PluginBundle::Git
+
+    *   Dist::Zilla::MintingProfile::Author::Caelum
 
 AUTHOR
     Ævar Arnfjörð Bjarmason <avar@cpan.org>

@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-PluginBundle-AVAR
 
+0.28 2013-01-14 11:56:10
+
+    - Disable InstallRelease unless install_command is set
+
 0.27 2013-01-14 08:21:25
 
     - Add InstallRelease with install_command = "cpanm ."
