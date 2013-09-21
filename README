@@ -32,7 +32,7 @@ DESCRIPTION
         remove = PodVersion
         remove = PodCoverageTests
     
-        [VersionFromPrev]
+        [Git::NextVersion]
         [AutoPrereqs]
         [MetaJSON]
 

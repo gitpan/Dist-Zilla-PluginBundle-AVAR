@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::AVAR::AUTHORITY = 'cpan:AVAR';
 }
 {
-  $Dist::Zilla::PluginBundle::AVAR::VERSION = '0.29';
+  $Dist::Zilla::PluginBundle::AVAR::VERSION = '0.30';
 }
 
 use 5.10.0;
@@ -242,7 +242,7 @@ It's equivalent to:
     remove = PodVersion
     remove = PodCoverageTests
     
-    [VersionFromPrev]
+    [Git::NextVersion]
     [AutoPrereqs]
     [MetaJSON]
 
