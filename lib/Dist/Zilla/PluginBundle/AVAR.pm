@@ -2,7 +2,7 @@ package Dist::Zilla::PluginBundle::AVAR;
 BEGIN {
   $Dist::Zilla::PluginBundle::AVAR::AUTHORITY = 'cpan:AVAR';
 }
-$Dist::Zilla::PluginBundle::AVAR::VERSION = '0.29';
+$Dist::Zilla::PluginBundle::AVAR::VERSION = '0.31';
 use 5.10.0;
 use Moose;
 use Moose::Autobox;
@@ -41,11 +41,11 @@ sub bundle_config {
     my $cpan_id = try { $zilla->stash_named('%PAUSE')->username };
 
     my $authority   = $args->{authority} // ($cpan_id ? "cpan:$cpan_id" : 'cpan:AVAR');
+    my $no_Authority = $args->{no_Authority} // 0;
     my $no_a_pre    = $args->{no_AutoPrereq} // 0;
     my $use_mm      = $args->{use_MakeMaker} // 1;
     my $use_ct      = $args->{use_CompileTests} // $args->{use_TestCompile} // 1;
     my $bugtracker  = $args->{bugtracker}  // 'rt';
-    warn "AVAR: Don't use GitHub as a tracker" if $bugtracker eq 'github';
     my $homepage    = $args->{homepage};
     warn "AVAR: Upgrade to new format" if $args->{repository};
     my $repository_url  = $args->{repository_url};
@@ -135,12 +135,17 @@ sub bundle_config {
             }
 
         ],
-        [
-            Authority => {
-                authority   => $authority,
-                do_metadata => 1,
-            }
-        ],
+        ($no_Authority
+         ? ()
+         : (
+             [
+                 Authority => {
+                     authority   => $authority,
+                     do_metadata => 1,
+                 }
+             ]
+          )
+        ),
         # Bump the Changlog
         [
             NextRelease => {
@@ -234,6 +239,7 @@ This is the plugin bundle that AVAR uses. Use it as:
     use_TestCompile = 0 ; I have my own compile tests here..
     ;; cpan:YOUR_CPAN_ID is the default authority, read from "dzil setup" entry for PAUSE
     authority = cpan:AVAR
+    ; no_Authority = 1 ; If you don't want to use the authority module
     ;; if you want to install your dist after release (set $ENV{PERL_CPANM_OPTS} if you need --sudo or --mirror etc.)
     ;; default is OFF
     install_command = cpanm .
@@ -245,7 +251,7 @@ It's equivalent to:
     remove = PodVersion
     remove = PodCoverageTests
     
-    [VersionFromPrev]
+    [Git::NextVersion]
     [AutoPrereqs]
     [MetaJSON]
 
