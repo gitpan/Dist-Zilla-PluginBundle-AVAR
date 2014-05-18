@@ -1,16 +1,7 @@
 Revision history for Dist-Zilla-PluginBundle-AVAR
 
-0.30 2013-09-21 06:00:47
-
-    - Update docs to indicate that we don't use VersionFromPrev, which
-      we haven't in *forever*.
-
-0.29 2013-09-21 05:49:37
-
-    - Add the no_Authority option which can be used to disable the
-      "Authority" module.
-
-    - Stop whining if github is used as a bugtracker, I'm not a child.
+0.29 2014-05-18 11:12:06
+    - fix crash in Config::MVP due to empty plugin config
 
 0.28 2013-01-14 11:56:10
 
